@@ -1,3 +1,12 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+fun main() {
+
+    val noteMenu = NoteMenu(mutableListOf<Note>())
+    val archiveMenu = ArchiveMenu(mutableListOf<Archive>(), noteMenu)
+
+    noteMenu.setup()
+    archiveMenu.setup()
+    while (!archiveMenu.out) {
+        archiveMenu.showMenu()
+    }
 }
+
